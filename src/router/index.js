@@ -1,23 +1,54 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 import Home from "../views/Home.vue";
+import Pokemons from "@/views/Pokemons";
+import Features from "@/views/Features";
+import Moves from "@/views/Moves";
+import Root from "@/views/Root";
 
 Vue.use(VueRouter);
 
 const routes = [
+  // {
+  //   path: "/",
+  //   name: "Home",
+  //   component: Home
+  // },
+  // {
+  //   path: "/about",
+  //   name: "About",
+  //   // route level code-splitting
+  //   // this generates a separate chunk (about.[hash].js) for this route
+  //   // which is lazy-loaded when the route is visited.
+  //   component: () =>
+  //     import(/* webpackChunkName: "about" */ "../views/About.vue")
+  // }
   {
     path: "/",
-    name: "Home",
-    component: Home
+    name: "Root",
+    component: Root
   },
   {
-    path: "/about",
-    name: "About",
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () =>
-      import(/* webpackChunkName: "about" */ "../views/About.vue")
+    path: "/home",
+    name: "Home",
+    component: Home,
+    children: [
+      {
+        path: "pokemons",
+        name: "Pokemons",
+        component: Pokemons
+      },
+      {
+        path: "moves",
+        name: "Moves",
+        component: Moves
+      },
+      {
+        path: "features",
+        name: "Features",
+        component: Features
+      }
+    ]
   }
 ];
 
