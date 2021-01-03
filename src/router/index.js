@@ -4,29 +4,14 @@ import Home from "../views/Home.vue";
 import Pokemons from "@/views/Pokemons";
 import Features from "@/views/Features";
 import Moves from "@/views/Moves";
-import Root from "@/views/Root";
 
 Vue.use(VueRouter);
 
 const routes = [
-  // {
-  //   path: "/",
-  //   name: "Home",
-  //   component: Home
-  // },
-  // {
-  //   path: "/about",
-  //   name: "About",
-  //   // route level code-splitting
-  //   // this generates a separate chunk (about.[hash].js) for this route
-  //   // which is lazy-loaded when the route is visited.
-  //   component: () =>
-  //     import(/* webpackChunkName: "about" */ "../views/About.vue")
-  // }
   {
     path: "/",
     name: "Root",
-    component: Root
+    redirect: "/home"
   },
   {
     path: "/home",
@@ -49,7 +34,22 @@ const routes = [
         component: Features
       }
     ]
-  }
+  },
+  // {
+  //   path: "/pokemon",
+  //   name: "Pokemon",
+  //   component: Pokemon
+  // },
+  // {
+  //   path: "/move",
+  //   name: "Move",
+  //   component: Move
+  // },
+  // {
+  //   path: "/feature",
+  //   name: "Feature",
+  //   component: Feature
+  // }
 ];
 
 const router = new VueRouter({

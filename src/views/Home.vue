@@ -24,6 +24,16 @@
 // import HelloWorld from "@/components/HelloWorld.vue";
 
 export default {
-  name: "Home"
+  name: "Home",
+  mounted() {
+    this.$router
+      .push({
+        path: "/home/pokemons",
+        query: {
+          page: "1"
+        }
+      })
+      .catch(error => error);
+  }
 };
 </script>
