@@ -3,15 +3,19 @@
     <!--    <img alt="Vue logo" src="../assets/logo.png" />-->
     <!--    <HelloWorld msg="Welcome to Your Vue.js App" />-->
     <div id="nav">
-      <router-link :to="{ path: '/home/pokemons', query: { page: '1' } }"
+      <router-link
+        :to="{ path: '/home/pokemons', query: { page: '1' } }"
+        replace
         >精灵列表</router-link
       >
       |
-      <router-link :to="{ path: '/home/moves', query: { page: '1' } }"
+      <router-link :to="{ path: '/home/moves', query: { page: '1' } }" replace
         >招式列表</router-link
       >
       |
-      <router-link :to="{ path: '/home/features', query: { page: '1' } }"
+      <router-link
+        :to="{ path: '/home/features', query: { page: '1' } }"
+        replace
         >特性列表</router-link
       >
     </div>
@@ -24,16 +28,8 @@
 // import HelloWorld from "@/components/HelloWorld.vue";
 
 export default {
-  name: "Home",
-  mounted() {
-    this.$router
-      .push({
-        path: "/home/pokemons",
-        query: {
-          page: "1"
-        }
-      })
-      .catch(error => error);
-  }
+  name: "Home"
 };
 </script>
+
+<style lang="scss"></style>
