@@ -292,6 +292,7 @@ export default {
         .catch(error => {
           this.$message.error("提交表单失败：" + error);
         });
+      this.handleRefresh();
     },
     handleRefresh() {
       this.$router.go(0);
