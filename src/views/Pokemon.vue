@@ -304,6 +304,7 @@ export default {
           name: name
         }
       });
+      this.handleRefresh();
     },
     handleFeature(name) {
       this.$router.push({
