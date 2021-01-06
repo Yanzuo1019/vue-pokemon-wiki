@@ -292,19 +292,23 @@ export default {
         .catch(error => {
           this.$message.error("提交表单失败：" + error);
         });
-      this.handleRefresh();
+      setTimeout(() => {
+        this.handleRefresh();
+      }, 1000);
     },
     handleRefresh() {
       this.$router.go(0);
     },
     handlePokemon(name) {
+      setTimeout(() => {
+        this.handleRefresh();
+      }, 1000);
       this.$router.push({
         path: "/pokemon",
         query: {
           name: name
         }
       });
-      this.handleRefresh();
     },
     handleFeature(name) {
       this.$router.push({
